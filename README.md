@@ -1,25 +1,17 @@
 <div align="center">
 
-<h1> Segment Any Tissue: One-Shot Reference Guided Training-Free Dual-Space Prompting for Universal Medical Image Segmentation </h1>
+<h1> Attack to Defense: Adversarial Agents for Point Prompt Optimization Empowering Segment Anything </h1>
 
 [Xueyu Liu]([https://scholar.google.com/citations?user=9JcQ2hwAAAAJ&hl=en](https://scholar.google.com.hk/citations?user=jeatLqIAAAAJ&hl=zh-CN))<sup>1</sup>, &nbsp; 
 Guangze Shi<sup>1</sup>, &nbsp; 
 Rui Wang<sup>2</sup>, &nbsp; 
 Yexin Lai<sup>1</sup>, &nbsp; 
 Jianan Zhang<sup>1</sup>, &nbsp; 
-Xinyu Wang<sup>3</sup>, &nbsp;
-Weixia Han<sup>3</sup>, &nbsp;
-Ming Li<sup>1</sup>, &nbsp;
-Xiaoshuang Zhou<sup>4</sup>, &nbsp;
 Yonfei Wu<sup>1*</sup>, &nbsp;
-Chen Wang<sup>3</sup>, &nbsp;
-Wen Zheng<sup>1</sup>
 
 
 <sup>1</sup>[Taiyuan University of Technology](https://www.tyut.edu.cn/), &nbsp;
 <sup>2</sup>[University of Science and Technology of China](https://www.ustc.edu.cn/), &nbsp;
-<sup>3</sup>[The Second Affiliated Hospital of Shanxi Medical University](https://www.sydey.com/)，&nbsp;
-<sup>4</sup>[Shanxi Provincial People's Hospital](https://www.sxsrmyy.com/)
 
 </div>
 
@@ -29,7 +21,9 @@ Wen Zheng<sup>1</sup>
 </p>
 
 ##  Description
-In the field of medical imaging, AI-driven technologies have historically faced limitations due to the high costs and complexities associated with training, especially in image segmentation. To address these challenges, we present Segment Any Tissue (SAT), an innovative training-free framework designed to automatically prompt the class-agnostic visual foundation model for the segmentation of medical images with exceptional efficiency. SAT leverages the robust feature matching capabilities of the pretrained foundation model to generate initial prompt points. It then introduces a series of novel automatic prompt engineering techniques across feature and physical spaces to optimize the prompt scheme. Finally, SAT utilizes a class-agnostic foundation segmentation model with the generated prompt scheme to achieve accurate segmentation results. Our method has been validated on four public datasets ranging from macro to micro scales and two private datasets. Results demonstrate superior performance compared to existing one-shot methods, requiring only one labeled reference image in a training-free manner. Ablation experiments further confirm the effectiveness of each component of the automatic prompt engineering. In summary, SAT introduces a unique automatic prompt framework that enables robust, domain-independent, universal segmentation performance without the need for training. This significantly advances the automatic prompting of foundation segmentation models for medical images. SAT introduces a brand-new paradigm for medical image segmentation, laying a solid foundation for the clinical application of intelligent medicine.
+\begin{abstract}
+	Prompt quality plays a critical role in the Segment Anything Model (SAM), yet existing methods rely heavily on heuristic or manual prompt design, limiting scalability and generalization. In this paper, we propose an adversarial reinforcement learning framework for automatic prompt optimization via competitive interaction between two agents. Specifically, we construct a task-agnostic prompt environment by modeling image patches as nodes in a dual-space graph, where edges encode physical and semantic distances. Within this environment, an attacker agent learns to activate a subset of prompts that maximally degrade SAM’s segmentation performance, while a defender agent learns to remove disruptive prompts and restore accuracy. Both agents are trained with Deep Q-Networks (DQNs) using segmentation quality variation as reward. During inference, only the defender is used to refine arbitrary coarse prompt sets, enabling improved segmentation across diverse tasks without retraining. Extensive experiments demonstrate that our method consistently enhances SAM’s robustness and generalization, establishing a flexible and plug-and-play framework for prompt-based segmentation.
+ 
 ## Setup 
 - Cuda 12.0
 - Python 3.9.18
